@@ -1,7 +1,11 @@
 <ul>
 <% @random_stations.each_with_index do |station, i| %>
   <li>
-    <%= i + 1 %>：<%= station.name %>
+    <%= i + 1 %>：<%= station.name %>（
+      <% station.lines.each do |line| %>
+        <%= line.name %>
+      <% end %>
+    ）
   </li>
 <% end %>
 </ul>
